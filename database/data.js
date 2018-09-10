@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'askthecommunity'
-});
+}); 
 
 connection.connect(function(err) {
   if (err) {
@@ -37,7 +37,7 @@ for (var i = 0; i < 100; i++) {
   })
 };
 
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 200; i++) {
   connection.query(`INSERT INTO ANSWERS (text, user)
     values 
     ("${text}", "${user}")
