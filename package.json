@@ -7,21 +7,32 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "build": "webpack --mode development",
+    "test": "webpack-dev-server"
   },
   "dependencies": {
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "mysql": "^2.16.0",
-    "mysql-faker": "0.0.5"
-  },
-  "devDependencies": {
-    "body-parser": "^1.18.3",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
-    "jquery": "^3.3.1",
-    "nodemon": "^1.18.4",
+    "mysql-faker": "0.0.5",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.18.4",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
   },
   "version": "1.0.0",
   "main": "index.js"
