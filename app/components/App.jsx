@@ -1,21 +1,42 @@
-const $ = require('jquery');
 const React = require('react');
-const ReactDOM = require('react-dom');
+const axios = require('axios');
+// const ReactDOM = require('react-dom');
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.get = this.get.bind(this);
+    this.state = {
+      questions: [],
+      answers: []
+    }
+    this.getQuestions = this.getQuestions.bind(this);
   }
 
-  get() {
-    $.ajax ({
-      type: 'GET',
-      url: '/askthecommunity',
-      success: () => console.log('success'),
-      error: () => console.log("nope")
-    });
+  componentDidMount() {
+
   }
+
+  getQuestions(restaurantId) {
+    // $.ajax ({
+    //   type: 'GET',
+    //   url: '/askthecommunity',
+    //   success: () => console.log('success'),
+    //   error: () => console.log("nope")
+    // });
+    axios.get('/questions')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+  }
+
+  // getAnswers() {
+  //   $.ajax({
+  //     type: 'G'
+  //   })
+  // }
   render() {
     return (
       <div>
