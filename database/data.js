@@ -1,4 +1,3 @@
-var mysqlfaker = require('mysql-faker');
 var mysql = require('mysql');
 var faker = require('faker');
 
@@ -56,3 +55,5 @@ console.log(faker.name.findName());
 //create data and send to database
   //insert that data into the table
   //script that contains node
+
+
