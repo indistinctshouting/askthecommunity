@@ -1,13 +1,13 @@
 const React = require('react');
 const axios = require('axios');
+
 // const ReactDOM = require('react-dom');
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      questions: [],
-      answers: []
+      questions: []
     }
     this.getQuestions = this.getQuestions.bind(this);
   }
@@ -23,7 +23,7 @@ class App extends React.Component {
     //   success: () => console.log('success'),
     //   error: () => console.log("nope")
     // });
-    axios.get('/questions')
+    axios.get('/askthecommunity')
       .then(function(response) {
         console.log(response);
       })
@@ -39,9 +39,13 @@ class App extends React.Component {
   // }
   render() {
     return (
-      <div>
-        just TAKE IT FROM MY HANDS
-      </div>
+      // <div>
+      //   just TAKE IT FROM MY HANDS
+   <div>  
+    <h1>Question Goes Here</h1>
+    <p>Answer will go here</p>
+    <button type="button" onClick={() => {alert("Do something!")}}>View question details</button>
+    </div>
     )
   }
 };
