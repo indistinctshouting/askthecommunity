@@ -55,3 +55,4 @@ console.log(faker.name.findName());
 //create data and send to database
   //insert that data into the table
   //script that contains node
+
