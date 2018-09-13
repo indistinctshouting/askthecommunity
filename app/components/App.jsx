@@ -7,59 +7,44 @@ const axios = require('axios');
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      questions: []
+    this.state = { questions: [] };
+    this.fetch = this.fetch.bind(this);
+  }
+    componentDidMount () {
+      this.fetch()
     }
-    this.getQuestions = this.getQuestions.bind(this);
-  }
+    
+    fetch() {
+      axios.get('/askthecommunity')
+        .then((res) => {
+          console.log(res.data);
+          this.setState({
+            questions: res.data
+          });
+        })
+    }
+  
+   render() {
+     return (
+       <div>
+        <p>
+         {JSON.stringify(this.state.questions)}
+        </p>
+       </div>
+     )
+   }
 
-  // componentDidMount() {
 
+
+  // render() {
+  //   return (
+  //   <div>  
+  //     <h1>Question Goes Here</h1>
+  //     <p>Answer will go here</p>
+  //     <button type="button" onClick={() => {alert("Do something!")}}>View question details</button>
+  //   </div>
+  //   )
   // }
-
-  getQuestions(Id) {
-    axios.get(`http://localhost:3000/askthecommunity`)
-      .then(function (reponse) {
-        console.log(response);
-      })
-      .catch(function (error){
-        console.log(error);
-      })
-  }
-
-  //   //based on the restaurant id: i wanna display all the questions that are stored in the database
-  //   //with the according answers
-  //   axios.post('/askthecommunity')
-  //     .then(function(response) {
-  //       console.log(response);
-  //     })
-  //     .catch(function(error){
-  //       console.log(error);
-  //     });
-  // }
-
-  // getAnswers() {
-  //   $.ajax({
-  //     type: 'G'
-  //   })
-  // }
-  render() {
-    return (
-      // <div>
-      //   just TAKE IT FROM MY HANDS
-   <div>  
-    <h1>Question Goes Here</h1>
-    <p>Answer will go here</p>
-    <button type="button" onClick={() => {alert("Do something!")}}>View question details</button>
-    </div>
-    )
-  }
 };
-
-// class App extends React.Component {
-//   render() {
-//     return <h1>YUHHHH!HH!H</h1>
-//   }
-// };
 
 module.exports = App; 
