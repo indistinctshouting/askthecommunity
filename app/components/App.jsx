@@ -1,6 +1,7 @@
 const React = require('react');
 const axios = require('axios');
 
+
 // const ReactDOM = require('react-dom');
 
 class App extends React.Component {
@@ -12,25 +13,30 @@ class App extends React.Component {
     this.getQuestions = this.getQuestions.bind(this);
   }
 
-  componentDidMount() {
+  // componentDidMount() {
 
-  }
+  // }
 
-  getQuestions(restaurantId) {
-    // $.ajax ({
-    //   type: 'GET',
-    //   url: '/askthecommunity',
-    //   success: () => console.log('success'),
-    //   error: () => console.log("nope")
-    // });
-    axios.get('/askthecommunity')
-      .then(function(response) {
+  getQuestions(Id) {
+    axios.get(`http://localhost:3000/askthecommunity`)
+      .then(function (reponse) {
         console.log(response);
       })
-      .catch(function(error){
+      .catch(function (error){
         console.log(error);
-      });
+      })
   }
+
+  //   //based on the restaurant id: i wanna display all the questions that are stored in the database
+  //   //with the according answers
+  //   axios.post('/askthecommunity')
+  //     .then(function(response) {
+  //       console.log(response);
+  //     })
+  //     .catch(function(error){
+  //       console.log(error);
+  //     });
+  // }
 
   // getAnswers() {
   //   $.ajax({
