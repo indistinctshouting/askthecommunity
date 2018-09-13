@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly with no props 1`] = `
+<div>
+  <h1>
+    Question Goes Here
+  </h1>
+  <p>
+    Answer will go here
+  </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    View question details
+  </button>
+</div>
+`;
